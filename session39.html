@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 39</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(orange,purple);
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1{
+            color: yellow;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+            border: 10px solid white;
+            display: none;
+        }
+        #score{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="score">Score: 0</h1>
+        <h1>Riddle App</h1>
+    </header>
+    <h3>1. What has to be broken before you can use it?</h3>
+    <input type="text" name="" id="q1">
+    <button onclick="q1()">Submit Answer</button>
+    <button onclick="h1()">Hint</button>
+    <h4 id="a1"></h4>
+    <img id="i1" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/how-to-fry-an-egg-horizontal-1538168712.jpg?crop=1.00xw:0.752xh;0,0.108xh&resize=1200:*" alt="">
+    <h3>2. What is full of holes but still holds water?</h3>
+    <input type="text" name="" id="q2">
+    <button onclick="q2()">Submit Answer</button>
+    <button onclick="h2()">Hint</button>
+    <h4 id="a2"></h4>
+    <img id="i2" src="https://5.imimg.com/data5/RI/XG/MY-35655789/sponge-cellulose-500x500.jpg" alt="">
+    
+</body>
+<script>
+    var t1 = 0;
+    var t2 = 0;
+    var score = 0;
+    function h1(){
+        document.getElementById("i1").style.display = "inline-block";
+    }
+    function q1(){
+        var q1 = document.getElementById("q1").value;
+        if(q1.toUpperCase() == "EGG"){
+            document.getElementById("a1").innerText = 
+            "Correct Answer";
+            t1 = t1 + 1;
+            if(t1 == 1){
+            score = score + 1;
+            document.getElementById("score").innerText = 
+            "Score: "+score;
+            }
+        }
+        else{
+            document.getElementById("a1").innerText = 
+            "Wrong Answer";
+        }
+    }
+
+    function h2(){
+        document.getElementById("i2").style.display = "inline-block";
+    }
+    function q2(){
+        var q2 = document.getElementById("q2").value;
+        if(q2.toUpperCase() == "SPONGE"){
+            document.getElementById("a2").innerText = 
+            "Correct Answer";
+            t2 = t2 + 1;
+            if(t2==1){
+            score = score + 1;
+            document.getElementById("score").innerText = 
+            "Score: "+score;
+            }
+        }
+        else{
+            document.getElementById("a2").innerText = 
+            "Wrong Answer";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 36</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(violet,yellow);
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1{
+            color: white;
+            animation-name: move;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes move {
+            0%{
+                color: white;
+                transform: translateX(-100px);
+            }
+            100%{
+                color: red;
+                transform: translateX(100px);
+            }
+        }
+        button{
+            padding: 10px;
+            background-color: tomato;
+            color: white;
+            border-radius: 20px;
+            border: 4px solid white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quiz App</h1>
+        <h2 id="score">Score: 0</h2>
+    </header>
+    <h3>1. Who is the founder of Amazon?</h3>
+    <label for="">1. Jeff Bezos</label>
+    <input type="radio" name="amazon" value="jeff" id="">
+    <label for="">Bill Gates</label>
+    <input type="radio" name="amazon" value="bill" id=""><br><br>
+    <label for="">Mark Zuckerberg</label>
+    <input type="radio" name="amazon" value="mark" id="">
+    <label for="">Elon Musk</label>
+    <input type="radio" name="amazon" value="elon" id="">
+
+    <h3>2. Founder of Apple?</h3>
+    <label for="">Tim cook</label>
+    <input type="radio" name="apple" value="tim" id="">
+    <label for="">Steve Jobs</label>
+    <input type="radio" name="apple" value="steve" id=""><br><br>
+    <label for="">Bill Gates</label>
+    <input type="radio" name="apple" value="bill" id="">
+    <label for="">Larry Page</label>
+    <input type="radio" name="apple" value="larry" id="">
+
+    <h3>3. Which is the worlds tallest building?</h3>
+    <label for="">Twin Tower</label>
+    <input type="radio" name="building" value="twin" id="">
+    <label for="">Shanghai Tower</label>
+    <input type="radio" name="building" value="shanghai" id=""><br><br>
+    <label for="">Exchange Tower</label>
+    <input type="radio" name="building" value="exchange" id="">
+    <label for="">Burj Khalifa</label>
+    <input type="radio" name="building" value="burj" id="">
+
+    <h3>4. Which is the worlds tallest mountain?</h3>
+    <label for="">Mt. Everest</label>
+    <input type="radio" name="mountain" value="everest" id="">
+    <label for="">Kilimanjaro</label>
+    <input type="radio" name="mountain" value="kili" id=""><br><br>
+    <label for="">Mt. Fuji</label>
+    <input type="radio" name="mountain" value="fuji" id="">
+    <label for="">K2</label>
+    <input type="radio" name="mountain" value="k2" id="">
+
+    <h3>5. Which is the worlds smallest Insect?</h3>
+    <label for="">Ant</label>
+    <input type="radio" name="insect" value="ant" id="">
+    <label for="">Mosquito</label>
+    <input type="radio" name="insect" value="mos" id="">
+    <label for="">Fairy Fly</label>
+    <input type="radio" name="insect" value="fairy" id="">
+    <label for="">House Fly</label>
+    <input type="radio" name="insect" value="house" id=""><br><br>
+
+    <button onclick="check()">Submit Answer</button>
+    
+    
+</body>
+<script>
+    var score = 0;
+    function check(){
+        var amazon = document.querySelector('input[name="amazon"]:checked').value;
+        if(amazon == "jeff"){
+            score = score + 1;
+        }
+
+        var apple  = document.querySelector('input[name="apple"]:checked').value;
+        if(apple == "steve"){
+            score = score + 1;
+        }
+        var building  = document.querySelector('input[name="building"]:checked').value;
+        if(building == "burj"){
+            score = score + 1;
+        }
+        var mountain = document.querySelector('input[name="mountain"]:checked').value;
+        if(mountain == "everest"){
+            score = score + 1;
+        }
+        var insect = document.querySelector('input[name="insect"]:checked').value;
+        if(insect == "fairy"){
+            score = score + 1;
+        }
+        document.getElementById("score").innerText ="Score: "+score;
+    }
+</script>
+</html>
